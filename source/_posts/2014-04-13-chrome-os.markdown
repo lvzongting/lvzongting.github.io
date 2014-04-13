@@ -1,0 +1,9 @@
+---
+layout: post
+title: "chrome os"
+date: 2014-04-13 15:14:57 +0800
+comments: true
+categories: 
+---
+
+测试一下中文
