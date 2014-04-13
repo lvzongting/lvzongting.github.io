@@ -4,7 +4,7 @@
   <title><![CDATA[Zongting Lv]]></title>
   <link href="http://lvzongting.github.io/atom.xml" rel="self"/>
   <link href="http://lvzongting.github.io/"/>
-  <updated>2014-04-13T19:46:57+08:00</updated>
+  <updated>2014-04-13T19:55:28+08:00</updated>
   <id>http://lvzongting.github.io/</id>
   <author>
     <name><![CDATA[Zongting Lv]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Chrome Os]]></title>
-    <link href="http://lvzongting.github.iotitle/"/>
+    <link href="http://lvzongting.github.io/blog/2014/04/13/chrome-os/"/>
     <updated>2014-04-13T15:14:57+08:00</updated>
-    <id>http://lvzongting.github.io./chrome-os</id>
+    <id>http://lvzongting.github.io/blog/2014/04/13/chrome-os</id>
     <content type="html"><![CDATA[<p>测试一下中文</p>
 ]]></content>
   </entry>
