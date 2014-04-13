@@ -4,7 +4,7 @@
   <title><![CDATA[Zongting Lv]]></title>
   <link href="http://lvzongting.github.io/atom.xml" rel="self"/>
   <link href="http://lvzongting.github.io/"/>
-  <updated>2014-04-14T01:28:53+08:00</updated>
+  <updated>2014-04-14T01:43:08+08:00</updated>
   <id>http://lvzongting.github.io/</id>
   <author>
     <name><![CDATA[Zongting Lv]]></name>
@@ -14,21 +14,29 @@
 
   
   <entry>
-    <title type="html"><![CDATA[chrome os]]></title>
+    <title type="html"><![CDATA[Chrome OS]]></title>
     <link href="http://lvzongting.github.io/blog/2014/04/13/chrome-os/"/>
     <updated>2014-04-13T15:14:57+08:00</updated>
     <id>http://lvzongting.github.io/blog/2014/04/13/chrome-os</id>
-    <content type="html"><![CDATA[<p>测试一下中文</p>
+    <content type="html"><![CDATA[<p>这个博客是由 octopress 和 slash 主题构成，稍微在源码上做了一些调整，相关修改在source分支中有详细记录。用google analysic 进行统计。</p>
+
+<p>测试一下中文</p>
 
 <p>测试一下图片速度</p>
 
 <p>minus.com</p>
 
+<p>这个图片的质量好，速度尚可，适合艺术类图片。</p>
+
 <p><img src="http://i4.minus.com/i6GkonP3Qs2dr.jpg"><br/>
 <a href="http://i4.minus.com/i6GkonP3Qs2dr.jpg">http://i4.minus.com/i6GkonP3Qs2dr.jpg</a></p>
 
-<p>tumblr
-<img src="http://24.media.tumblr.com/54fe87993a7756f43a985918099a3587/tumblr_n2g93bAS9a1rujq2eo1_1280.jpg"></p>
+<p>tumblr</p>
+
+<p>这个图片质量一般，但是速度很快，适合渣图。</p>
+
+<p><img src="http://24.media.tumblr.com/54fe87993a7756f43a985918099a3587/tumblr_n2g93bAS9a1rujq2eo1_1280.jpg"><br/>
+<a href="http://24.media.tumblr.com/54fe87993a7756f43a985918099a3587/tumblr_n2g93bAS9a1rujq2eo1_1280.jpg">http://24.media.tumblr.com/54fe87993a7756f43a985918099a3587/tumblr_n2g93bAS9a1rujq2eo1_1280.jpg</a></p>
 ]]></content>
   </entry>
   
