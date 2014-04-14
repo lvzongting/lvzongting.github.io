@@ -4,7 +4,7 @@
   <title><![CDATA[Zongting Lv]]></title>
   <link href="http://lvzongting.github.io/atom.xml" rel="self"/>
   <link href="http://lvzongting.github.io/"/>
-  <updated>2014-04-14T19:10:42+08:00</updated>
+  <updated>2014-04-14T20:27:11+08:00</updated>
   <id>http://lvzongting.github.io/</id>
   <author>
     <name><![CDATA[Zongting Lv]]></name>
@@ -24,7 +24,7 @@
 
 <p>其实最近也总有人问我上大学了应该买什么样的笔记本比较合适，因为很多人确实不懂而且很多人都在中关村被坑过。我也总在想这个问题。其实要说够用的话，chromebook足以能满足上大学，或者非计算机专业人员的各种需求。但是这不等于chromebook就不能满足计算机专业人士的需求。最后一节我将写到让那些想玩计算机的人一些感兴趣一些话题。当然你也可以直接跳到最后一节，其实我就是先写的最后一节(<em>^__^</em>) 。</p>
 
-<p>—-2014-03-29 更新—-</p>
+<p><span style="color: red">—-2014-03-29 更新—-</span></p>
 
 <p>发出这篇文章到现在得到了很多人的关注，大家都纷纷表示对chromebook以及chrome OS极其的感兴趣，而且认为chrome OS确实很值得一试。但是也有很多同学反应了一些问题，今天的更新主要是关于chromebook和chrome OS离线操作问题以及利用crouton这个chroot环境下安装一个完整的debian。我将更新写在最后的最后，如果只想看更新就从后面看起吧。之所以没有单独写一篇而是在这篇上反复的修改，就是希望大家能得到更加整合的信息，而不是看完一再去找二，避免了很多麻烦。</p>
 
