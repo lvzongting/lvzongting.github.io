@@ -4,7 +4,7 @@
   <title><![CDATA[Zongting Lv]]></title>
   <link href="http://lvzongting.github.io/atom.xml" rel="self"/>
   <link href="http://lvzongting.github.io/"/>
-  <updated>2014-04-14T14:05:50+08:00</updated>
+  <updated>2014-04-14T14:09:41+08:00</updated>
   <id>http://lvzongting.github.io/</id>
   <author>
     <name><![CDATA[Zongting Lv]]></name>
@@ -15,9 +15,18 @@
   
   <entry>
     <title type="html"><![CDATA[Chrome OS]]></title>
-    <link href="http://lvzongting.github.io/blog/2014/04/13/chrome-os/"/>
+    <link href="http://lvzongting.github.io/blog/2014/04/14/chrome-os/"/>
+    <updated>2014-04-14T14:07:48+08:00</updated>
+    <id>http://lvzongting.github.io/blog/2014/04/14/chrome-os</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Test]]></title>
+    <link href="http://lvzongting.github.io/blog/2014/04/13/test/"/>
     <updated>2014-04-13T15:14:57+08:00</updated>
-    <id>http://lvzongting.github.io/blog/2014/04/13/chrome-os</id>
+    <id>http://lvzongting.github.io/blog/2014/04/13/test</id>
     <content type="html"><![CDATA[<p>这个博客是由 octopress 和 slash 主题构成，稍微在源码上做了一些调整，相关修改在source分支中有详细记录。用google analysis 进行统计。</p>
 
 <!-- more -->
