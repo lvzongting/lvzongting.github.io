@@ -4,7 +4,7 @@
   <title><![CDATA[Zongting Lv]]></title>
   <link href="http://lvzongting.github.io/atom.xml" rel="self"/>
   <link href="http://lvzongting.github.io/"/>
-  <updated>2014-04-14T12:06:31+08:00</updated>
+  <updated>2014-04-14T13:43:01+08:00</updated>
   <id>http://lvzongting.github.io/</id>
   <author>
     <name><![CDATA[Zongting Lv]]></name>
@@ -18,7 +18,17 @@
     <link href="http://lvzongting.github.io/blog/2014/04/13/chrome-os/"/>
     <updated>2014-04-13T15:14:57+08:00</updated>
     <id>http://lvzongting.github.io/blog/2014/04/13/chrome-os</id>
-    <content type="html"><![CDATA[<p>这个博客是由 octopress 和 slash 主题构成，稍微在源码上做了一些调整，相关修改在source分支中有详细记录。用google analysis 进行统计。</p>
+    <content type="html"><![CDATA[<p>minus.com</p>
+
+<p><img src="http://i.minus.com/iIn0m8uMOl7KM.jpg">
+<a href="http://i.minus.com/iIn0m8uMOl7KM.jpg">http://i.minus.com/iIn0m8uMOl7KM.jpg</a></p>
+
+<p>七牛</p>
+
+<p><img src="http://lzt-blog.qiniudn.com/20090212_012.jpg">
+<a href="http://lzt-blog.qiniudn.com/20090212_012.jpg">http://lzt-blog.qiniudn.com/20090212_012.jpg</a></p>
+
+<p>这个博客是由 octopress 和 slash 主题构成，稍微在源码上做了一些调整，相关修改在source分支中有详细记录。用google analysis 进行统计。</p>
 
 <p>测试一下中文</p>
 
