@@ -1,0 +1,56 @@
+---
+layout: post
+title: "Test"
+date: 2014-04-13 15:14:57 +0800
+comments: true
+categories: 
+---
+
+这个博客是由 octopress 和 slash 主题构成，稍微在源码上做了一些调整，相关修改在source分支中有详细记录。用google analysis 进行统计。
+
+<!-- more -->
+minus.com
+
+{%img http://i.minus.com/iIn0m8uMOl7KM.jpg %}
+http://i.minus.com/iIn0m8uMOl7KM.jpg
+
+七牛
+
+{%img http://lzt-blog.qiniudn.com/20090212_012.jpg %}
+http://lzt-blog.qiniudn.com/20090212_012.jpg
+
+
+测试一下中文
+
+测试一下图片速度
+
+minus.com
+
+这个图片的质量好，速度尚可，适合艺术类图片。
+
+{% img  http://i4.minus.com/i6GkonP3Qs2dr.jpg %}  
+http://i4.minus.com/i6GkonP3Qs2dr.jpg
+
+这就叫做幸福
+
+{% img http://i5.minus.com/iO86NRmofKiVL.png %}
+http://i5.minus.com/iO86NRmofKiVL.png
+
+
+tumblr
+
+这个图片质量一般，但是速度很快，适合渣图。
+
+{% img http://24.media.tumblr.com/54fe87993a7756f43a985918099a3587/tumblr_n2g93bAS9a1rujq2eo1_1280.jpg %}  
+http://24.media.tumblr.com/54fe87993a7756f43a985918099a3587/tumblr_n2g93bAS9a1rujq2eo1_1280.jpg
+
+http://img.vim-cn.com/
+curl -F 'name=@screenshot.png' http://img.vim-cn.com/
+
+
+{% img http://img.vim-cn.com/f2/bd76daf93871abf44c034dc131be5f3645fe1f.jpeg %}
+http://img.vim-cn.com/f2/bd76daf93871abf44c034dc131be5f3645fe1f.jpeg
+
+
+
+
