@@ -4,7 +4,7 @@
   <title><![CDATA[Zongting Lv]]></title>
   <link href="http://lvzongting.github.io/atom.xml" rel="self"/>
   <link href="http://lvzongting.github.io/"/>
-  <updated>2014-04-14T20:36:15+08:00</updated>
+  <updated>2014-04-14T20:39:12+08:00</updated>
   <id>http://lvzongting.github.io/</id>
   <author>
     <name><![CDATA[Zongting Lv]]></name>
@@ -32,7 +32,13 @@
 
 <p>今天更近一步的玩了一下<span style="font-size: 12.0pt;"><strong><span style="color: rgb(128,128,0);">开发者模式下的gentoo</span></strong></span>，将各位想了解到的一些系统的基本信息都截了图，比如有些人想知道这里的X是个什么情况，emerge到底配置是什么样的，能不能用，linuxbrew如果使用等等。所以特此将自己知道的一些东西截图传了上来，如果还想知道其他更加详尽的信息可以直接在后面留言我截图后再继续补上。</p>
 
-<p>Chrome OS 的下载与安装 </p>
+<h1 id="chrome-os-">Chrome OS 的下载与安装</h1>
+
+<h2 id="chrome-os--1">Chrome OS 的下载与安装</h2>
+
+<h3 id="chrome-os--2">Chrome OS 的下载与安装</h3>
+
+<h4 id="chrome-os--3">Chrome OS 的下载与安装</h4>
 
 <p>Chrome OS如果想要安装到普通pc上，那么就要用到其开源编译版chromium OS。chromium OS完成了这样的工作，使得chrome OS可以在普通PC上安装并运行。如果你已经有一个能用eeepc或是其他笔记本，那么没有必要着急换一个新的chromebook，你可以直接在你现有的设备上安装使用chromium OS，由于其基于gentoo，所以绝对比windows XP精简版更快。</p>
 
