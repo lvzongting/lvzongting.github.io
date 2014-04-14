@@ -4,7 +4,7 @@
   <title><![CDATA[Zongting Lv]]></title>
   <link href="http://lvzongting.github.io/atom.xml" rel="self"/>
   <link href="http://lvzongting.github.io/"/>
-  <updated>2014-04-14T14:09:41+08:00</updated>
+  <updated>2014-04-14T14:22:30+08:00</updated>
   <id>http://lvzongting.github.io/</id>
   <author>
     <name><![CDATA[Zongting Lv]]></name>
@@ -18,7 +18,258 @@
     <link href="http://lvzongting.github.io/blog/2014/04/14/chrome-os/"/>
     <updated>2014-04-14T14:07:48+08:00</updated>
     <id>http://lvzongting.github.io/blog/2014/04/14/chrome-os</id>
-    <content type="html"><![CDATA[
+    <content type="html"><![CDATA[<p>  chromebook 在2014的CES上得奖之后，一直备受大家关注，由于其低廉的价格，获得了广泛的认可。在亚马逊笔记本排行榜上一直蝉联榜首。里面搭载的系统是chrome OS。由于打算购买chromebook，Acer C720才199美元就算海淘买下来也就1370块，非常合适，所以今天特意先尝试了一下chrome OS。</p>
+
+<!--more-->
+
+
+<pre><code> 其实最近也总有人问我上大学了应该买什么样的笔记本比较合适，因为很多人确实不懂而且很多人都在中关村被坑过。我也总在想这个问题。其实要说够用的话，chromebook足以能满足上大学，或者非计算机专业人员的各种需求。但是这不等于chromebook就不能满足计算机专业人士的需求。最后一节我将写到让那些想玩计算机的人一些感兴趣一些话题。当然你也可以直接跳到最后一节，其实我就是先写的最后一节(*^__^*) 。
+
+----2014-03-29 更新----
+
+发出这篇文章到现在得到了很多人的关注，大家都纷纷表示对chromebook以及chrome OS极其的感兴趣，而且认为chrome OS确实很值得一试。但是也有很多同学反应了一些问题，今天的更新主要是关于chromebook和chrome OS离线操作问题以及利用crouton这个chroot环境下安装一个完整的debian。我将更新写在最后的最后，如果只想看更新就从后面看起吧。之所以没有单独写一篇而是在这篇上反复的修改，就是希望大家能得到更加整合的信息，而不是看完一再去找二，避免了很多麻烦。
+</code></pre>
+
+<p>   &mdash;&mdash;2014-03-30 更新&mdash;&mdash;</p>
+
+<p>   今天更近一步的玩了一下开发者模式下的gentoo，将各位想了解到的一些系统的基本信息都截了图，比如有些人想知道这里的X是个什么情况，emerge到底配置是什么样的，能不能用，linuxbrew如果使用等等。所以特此将自己知道的一些东西截图传了上来，如果还想知道其他更加详尽的信息可以直接在后面留言我截图后再继续补上。</p>
+
+<p>Chrome OS 的下载与安装</p>
+
+<pre><code>Chrome OS如果想要安装到普通pc上，那么就要用到其开源编译版chromium OS。chromium OS完成了这样的工作，使得chrome OS可以在普通PC上安装并运行。如果你已经有一个能用eeepc或是其他笔记本，那么没有必要着急换一个新的chromebook，你可以直接在你现有的设备上安装使用chromium OS，由于其基于gentoo，所以绝对比windows XP精简版更快。
+
+Chromium OS只提供了源代码，你可以按照官方导引自己编译一个chromium OS，当然由于这个系统特别收欢迎，所以无所不能的网络上已经有大神做好了每日编译版。这里列出三个源：
+</code></pre>
+
+<p><a href="http://download-chromiumos.appspot.com/">http://download-chromiumos.appspot.com/</a></p>
+
+<p><a href="http://chromium.arnoldthebat.co.uk/index.php">http://chromium.arnoldthebat.co.uk/index.php</a></p>
+
+<p><a href="http://sourceforge.net/projects/chromiumos/">http://sourceforge.net/projects/chromiumos/</a></p>
+
+<p>找一个你能登陆上的网站去下载最新的chromium OS，如果你登陆不上去不等于这个网站不存在，你懂的。比如我在<a href="http://chromium.arnoldthebat.co.uk/index.php">http://chromium.arnoldthebat.co.uk/index.php</a> 这里的daily目录下下载了Cx86OS-20140314010101.img.7z 大概250+M，然后将其解压，用7z 挤压完之后你会得到一个2.5G 大小的img文件，将这个文件dd到你的U盘上。然后再用U盘把你的计算机引导起来就进入chromium OS了。</p>
+
+<p>将上面的步骤重新总结一下以便于观看：</p>
+
+<p>1、下载U盘镜像源</p>
+
+<pre><code> $ wget http://chromium.arnoldthebat.co.uk/daily/Cx86OS-20140314010101.img.7z
+</code></pre>
+
+<p>2、解压包(没有7z命令就装一个)</p>
+
+<pre><code> $ 7z x Cx86OS-20140314010101.img.7z
+</code></pre>
+
+<p>3、dd镜像源到U盘(这一步会抹掉你U盘上的所有内容，U盘容量要大于2.5G，假设你的U盘是sdb)</p>
+
+<pre><code> $ dd if=Cx86OS-20140314010101.img of=/dev/sdb bs=4M
+
+ 如果下载下来的文件是USB.bin的话也是一样的
+
+ $ dd if=USB.bin of=/dev/sdb bs=4M
+</code></pre>
+
+<p>4、通过U盘引导你的计算机</p>
+
+<p>进入系统之后，需要你点击几下continue ，配置一下无线设置，然后输入gmail的账户，就能进入chromium 系统了。进入系统之后它会自动的同步你的chrome配置下载插件，更新系统。</p>
+
+<p>photo-media</p>
+
+<p>首次进入系统会让你设置网络如图那样：</p>
+
+<p>photo-media</p>
+
+<p>然后就是输入gmail账户</p>
+
+<p>photo-media</p>
+
+<p>再次进入系统就是下图所示的那样了。</p>
+
+<p>photo-media</p>
+
+<p>我的插件同步完，然后开了几个标签，无论是启动还是使用起来都非常的快。反正也不伤害硬盘上原来的东西，所以各位可以大胆的试一下。</p>
+
+<p>photo-media</p>
+
+<p>下面这个图就是chromium OS的资源管理器，本地硬盘上的东西已经都识别出来了。</p>
+
+<p>photo-media</p>
+
+<p>其他一些资源(感谢@张维垚visual 补充)</p>
+
+<p>很早，从螃蟹本Cr-48就开始玩chrome OS的Hexxeh大神，在早期也做了chromium OS的Build版</p>
+
+<p>主页地址在这里：<a href="http://chromeos.hexxeh.net/">http://chromeos.hexxeh.net/</a></p>
+
+<p>这里的版本只是到了  Build 4028 Built on 20th April 2013 就停止了，后来大神休息了9个月又开了一个新的项目project-swift 不过大神太忙现在还没有主页，但是在google groups上有一个list</p>
+
+<p>地址是：<a href="https://groups.google.com/forum/#!forum/project-swift">https://groups.google.com/forum/#!forum/project-swift</a></p>
+
+<p>大神在这解答各种在笔记本或是其他设备上安装出现的问题。当然最新的编译版也会在这里放出。</p>
+
+<p>最新的编译版地址(感谢@王孙平的回复)：<a href="http://cache.hexxeh.net/swift/x86-generic/5641.0.2014_03_15_1626/usb.bin.gz">http://cache.hexxeh.net/swift/x86-generic/5641.0.2014_03_15_1626/usb.bin.gz</a></p>
+
+<p>这个编译版最大的好处是可以通过google的服务器自动升级chromium OS，而且，大神还在各种设备上安装了chrome OS，</p>
+
+<p>一个介绍性的blog在这里：<a href="http://www.chromestory.com/2014/02/hexxehs-chromium-os-builds-live/">http://www.chromestory.com/2014/02/hexxehs-chromium-os-builds-live/</a></p>
+
+<p>chromium OS 可以运行在如下设备中，比如：</p>
+
+<p>iPad :<a href="http://www.chromestory.com/2010/09/how-to-install-google-chrome-os-on-samsung-galaxy-tab-and-ipad/">http://www.chromestory.com/2010/09/how-to-install-google-chrome-os-on-samsung-galaxy-tab-and-ipad/</a></p>
+
+<p>树莓派 raspberry-pi :<a href="http://www.chromestory.com/2012/07/chromium-for-raspberry-pi-from-hexxeh/">http://www.chromestory.com/2012/07/chromium-for-raspberry-pi-from-hexxeh/</a></p>
+
+<p>nexus-7 :<a href="http://www.chromestory.com/2012/10/chromium-os-on-nexus-7-so-when-can-we-dual-boot-hexxeh/">http://www.chromestory.com/2012/10/chromium-os-on-nexus-7-so-when-can-we-dual-boot-hexxeh/</a></p>
+
+<p>最后关于chromebook更多的消息可以订阅这个网站：<a href="http://www.chromestory.com/category/chromebook/">http://www.chromestory.com/category/chromebook/</a></p>
+
+<p>由于chrome OS基于gentoo所以它的移植性可以给各位无尽的遐想，如果你比较熟悉gentoo那么移植chromium OS 应该不算困难。根据@张光宇提供的信息，AUR中已经包括了chromium OS，所以这么看来各位有兴趣的话，弄一个基于archlinux的chromium OS系统也是有可能的。</p>
+
+<p>使用感受和随想</p>
+
+<p>1、特别适合集中精力做事情</p>
+
+<pre><code> 这个系统在普通模式下几乎没有什么可以配置的东西，打开浏览器开始你的工作吧。比如在线看电影，听豆瓣，刷人人，等等。从启动到浏览器打开没有任何其他的影响非常直接。在你集中精力工作的时候不会收到各种打扰。
+
+  可能在工作中掉电是最让人头痛的事情了，用这个系统掉电以后重新开机，什么也丢不了还直接回到你上次断掉的那个位置。
+
+  有很多同学在工作了很久之后发现自己犯二没保存。而在这里都会自动保存的。
+
+  特别适合文字工作者，比如新闻撰稿人，程序员，阅读论文，写技术报告，等等，这里简洁的一切让你集中注意力在你的工作中，特别有工作的欲望。不需要担心又碰坏了哪个配置而捣鼓一下午。这里没有什么可选的配置让你碰坏的。
+</code></pre>
+
+<p>2、本地化</p>
+
+<pre><code> 如果用chorme OS使用google 文档和google 网盘是一件非常爽的事情，这里由于这两个网站并不真的"存在"所以就没有截图，但是，我用了一下百度网盘，百度网盘的在线电影播放和在线音乐播放非常爽。不过还有很大的改进的空间，如果你是个创业者，那么你会从这里找到些机会的。
+
+ 百度网盘非常快，但是没有更加好用的chrome插件，wps也没有相应的插件，也许这个插件就简单到是一个连接，这样也会有很大的不一样，设想一下，用在线的wps将文档存在百度网盘上，随时可以编写，协作，像google doc那样多爽。
+
+  所以，本地化工作还有许多要做的，而在chrome web store上发布插件又那么容易。这里应该有许多工作可以以百度网盘为基础，开展更加方便的，更加有创意的一些项目。在线协作写程序？绘画？分享报表？分享大作业？
+
+ 以后猎豹浏览器就直接升级成了猎豹OS。基于chrome OS。O(∩_∩)O
+</code></pre>
+
+<p>3、在线工作和离线工作已经很模糊了</p>
+
+<pre><code> 如果你能体会一下google 文档的话，你会发现你根本不在乎什么在线还是离线了。反正为了重要的文件不丢都会在网盘上备份一份的，而用chromium  OS系统+google文档 你写的过程中就已经在网盘上备份着呢，可以无限的撤销，可以像王总一样，在家里ctrl+C 然后到单位再Ctrl+V 。如果有些时候你没有网络，那么所有的工作都会缓冲在本地，等有网络的时候会自动的和网络同步，完全不用你担心。所以，你很快就会不那么在乎离线还是在线工作了。
+</code></pre>
+
+<p>4、避免重装系统的烦恼</p>
+
+<pre><code> 很多人的windows会越用越慢，然后就开始一项伟大的计划，重装电脑，但是，各种重要的文件，需要备份，以防止丢失，所以又要借一个很大的移动硬盘，而备份时候发现真正占领这些空间的是一些常用的软件，每个软件都是G级别的，而这些软件更新升级的时候又要重来一遍。重新下载，安装。一折腾就是几G的空间。
+
+ chrome OS就没有这个问题，你再也不需要下载软件，然后安装它。你只需要在chrome web store中找到它，然后选中它，下载和安装还有日后的更新你就再也不用管了。如果你有一台新的计算机，那么登陆上你的gmail账户，这些东西会自动装好的。由于这些都是云服务，所以程序的主体都在网络上，你需要下载的东西非常之少，所以下载和安装的过程非常快，而且还是全自动的。比360管家更加方便。
+
+ 你永远不用重装系统，也不用关心升级问题，它会自己搞定的，很强大的。而且计算机不会因为使用时间长而变得越来越慢，相反随着系统升级，应该是越来越快。
+
+ 工作的时候专心工作，休息的时候就回到真实的世界中生活，永远不需要再计划着重装系统之类的事情了。
+</code></pre>
+
+<p>5、数据永不丢失</p>
+
+<pre><code> 有很多人都花过几百大洋去恢复数据吧。无论是使用google网盘还是百度网盘，还是其他网盘或是云服务。你的数据永远在那里，不会丢失。
+
+ 很多时候，我们只需要处理数据的一部分，但是却要将所有数据下载到本地，这样不但浪费时间，而且浪费了带宽和本地的硬盘。有了网络上的云服务，比如google网盘和百度网盘，那么你需要那些数据就直接查阅或是编辑哪些数据，不需要全部把它下载回来。避免了本地数据的丢失，而且不用等待那么多没用的数据的上传和下载。将说有的时间都集中在真正有意义的事情上，无需等待。
+
+ 在做报表的时候，报表需要很多人同时合作完成，在合报表的时候是非常头疼的一件事情，而使用google文档的在线协作编辑就没有这么多麻烦了，随着编辑这个报表就慢慢的完善起来，就算最后还差一点，也不是完全不可用，可以大家一边编辑，审查就同时开始进行了。做完多少就能审查多少。看到这里百度网盘和wps你们应该明白什么意思了吧，心动了吗？
+
+ MS office 已经发布这个东西了，但是他们是收费的，每年99美元。本地化的office已经走到尽头了。所以chromebook和chrome OS带来的这种工作方式绝对是未来。
+</code></pre>
+
+<p>高级使用方法</p>
+
+<p>在满足了如上所说的普通人的需求之后，你会欣喜的发现其开发者模式的强大，Ctrl + Alt +F2 可以进入终端，你懂的，可以使用gentoo的emerge安装各种本地程序了，当然你要先配置一下源。我想各位比我了解gentoo，你们自己玩吧。我就不罗嗦了。</p>
+
+<p>photo-media</p>
+
+<p>对于高级用户，你们可以在本地安装程序。而且如果用的不爽chromebook被archlinux和debian完全支持，所以199美元的这个神器也是完全可以享受的上的。不算系统什么的就199美元然后看看这个硬件配置，很值吧。</p>
+
+<p>chrome OS的展望</p>
+
+<p>chrome OS的潜力非常巨大，就我个人有限的展望能力，除了做chromebook这样的笔记本以外，可以看到如下发展的机会。</p>
+
+<p>1、局域网无盘系统</p>
+
+<pre><code> PXE+chromium OS 整个系统才2.5G放到nfs上 而基于gentoo非常好PXE，这样整个局域网内的计算机不需要安装本地系统，只要把PXE服务器弄好，然后其他的计算机一开机就从网络系统进入，然后用自己的gmail账户登陆系统使用，非常方便实用，免去了安装系统和维护系统的精力，特别适用于网吧，或是小型企业，大家不会再将办公时间浪费在修计算机上，也不需要雇佣太多的计算机维护人员，基本上这个系统无需维护，只要把PXE服务器维护好就可以了。
+
+  员工也不会将精力再投入到如何安装某个软件或是配置打印机上，google的云打印绝对是节省时间的利器。
+</code></pre>
+
+<p>2、公共查询系统</p>
+
+<pre><code> 比如图书馆查询系统等，这样的chrome系统如果在guest模式下，几乎不需要任何配置就已经足够安全，不需要像windows那样各种修改注册表之后还是有被入侵的可能性。而且永远保持最新自动升级，没有到期之后不再维护问题。不但降低了风险，而且降低了维护的花费。
+</code></pre>
+
+<p>3、学校机房</p>
+
+<pre><code> 根据上面提到PXE+chromium OS的方案，学校机房需要什么软件的时候只需要在PXE服务器上弄好就可以了，没有必要再去对每一台计算机进行单独的配置，即使使用局域网广播GHOST也是非常劳神费力的一件事情。而chromium OS有同样的效率，却不需要精心的进行什么配置，就像自己用的chrome浏览器一样，一台弄好了，所有的就自动都弄好了。
+</code></pre>
+
+<p>4、数据管理系统</p>
+
+<pre><code> 使用chromium OS 做服务器或是数据库管理和维护终端简直就是神器中的神器，安全，续航时间长，干净，可替换性强，所以非常完美。因为这个方面是比较专业的方面所以我这样说大概很多人就已经明白了我的意思了。
+</code></pre>
+
+<p>总结：</p>
+
+<p>chromium OS安装非常方便，可以临时在U盘上安装试用一下，如果觉得好完全可以安装在本地硬盘上，或者干脆就将存储数据的硬盘和存储系统的硬盘分开，用一个4G的读写速度快的flash装系统，然后和本地存数据的硬盘分开，这样，如果系统出问题了，就用原来下载的那个包重新刷一下，然后登陆一下系统然后什么就都回来了。无需更多的操作。</p>
+
+<p>这样在刷系统的时候也很安全，系统和数据在物理上都是隔离的。</p>
+
+<p>也许以后就进入到这么一个时代，买一个带chrome OS的U盘或是高速SD卡，然后插到计算机上，开机登陆进入自己的gmail账户，然后就可以使用了。完全没有所谓的安装或是复制的过程。太方便了。</p>
+
+<p>先写这么多吧，今天就想到这么多了。如果还有什么新的或是各位还有什么问题，在后面回复，然后我有时间可以再接着写。</p>
+
+<p>&mdash;&mdash;2014-03-29 更新&mdash;&mdash;</p>
+
+<p>chrome OS 离线操作</p>
+
+<p>这个是被M$花钱打广告直接黑过的问题，所以，怎么说都说不清楚的，只能上图片了。chrome web store里面专门有个分类叫做offline apps。生怕那些没有网络的同学看不到，于是截图放在这里。</p>
+
+<p>photo-mediaphoto-mediaphoto-mediaphoto-media</p>
+
+<p>photo-media</p>
+
+<p>photo-media</p>
+
+<p>如果觉得还不爽可以用linuxbrew ，如果觉得还不爽可以打开开发者模式用gentoo的emerge，如果觉得还不爽可以直接上archlinux 地址:<a href="https://wiki.archlinux.org/index.php/Acer_C720_Chromebook">https://wiki.archlinux.org/index.php/Acer_C720_Chromebook</a></p>
+
+<p>还有一个更加强大的工具crouton，一个chrome OS中的chroot环境，可以方便快捷的安装debian和ubuntu(@张维垚visual 提供的信息)，怕我的表达能力有限，说不清楚，于是在一个不存在的video网站上下载了一个视频已经传到优酷上了，包括两部分：</p>
+
+<p>1、利用crouton安装一个chroot环境的带桌面环境的linux，地址：<a href="http://v.youku.com/v_show/id_XNjkxNzM2Mjgw.html">http://v.youku.com/v_show/id_XNjkxNzM2Mjgw.html</a></p>
+
+<p>2、在这个chroot环境下的linux中安装各种本地程序，比如ubuntu软件中心，libreoffice等，地址：<a href="http://v.youku.com/v_show/id_XNjkxODAwNjky.html">http://v.youku.com/v_show/id_XNjkxODAwNjky.html</a></p>
+
+<p>   &mdash;&mdash;2014-03-30 更新&mdash;&mdash;</p>
+
+<p>开发者模式下的gentoo</p>
+
+<p>这是刚切换到F2终端，然后通过chronos账户进入，无需密码。@唐显斌 同学表示有些版本其chronos是需要密码的，密码是password。</p>
+
+<p>photo-media</p>
+
+<p>如下是uname -a 和 cat /etc/issue中的全部内容，这个系统的基本信息。</p>
+
+<p>photo-media</p>
+
+<p>这是chronos和root的账户配置，chronos没有密码，root通过sudo su进入。默认都是bash，没有用fish之类的。</p>
+
+<p>photo-media</p>
+
+<p>这个是/etc/fstab 以及实际运行中磁盘的挂载情况</p>
+
+<p>photo-media</p>
+
+<p>gentoo中emerge的配置情况，很有希望使用gentoo prefix 但是现在还缺少gcc等工具。看到这个各位gentoo大神应该有很多想法了吧。</p>
+
+<p>photo-media</p>
+
+<p>这个是大家关心的另外一个问题就是X，X server 1.12.4 通过fbdev运行，没有任何特殊的地方，就是一个普通的X。感谢@秦小内 的更正:chromeos的WM只认chrome一个程序…我忘记在哪里看到了，原因貌似是 chromeos的渲染是类似wayland的那种client side compositing。而不归WM管…据说用一些hacky的方法可以跑起来X程序，但是一定是全屏的………比如Emacs。所以要crouton…然后里面startx就给你另外启动一个X display…crouton会把声音forward到Cras来，但是目前没法共享剪贴板…</p>
+
+<p>photo-media</p>
+
+<p>这个是直接运行emerge &mdash;sync的结果，看来我还是不太会用emerge呀。(我是arch党)</p>
 ]]></content>
   </entry>
   
