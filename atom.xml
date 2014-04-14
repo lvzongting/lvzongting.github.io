@@ -4,7 +4,7 @@
   <title><![CDATA[Zongting Lv]]></title>
   <link href="http://lvzongting.github.io/atom.xml" rel="self"/>
   <link href="http://lvzongting.github.io/"/>
-  <updated>2014-04-14T01:43:08+08:00</updated>
+  <updated>2014-04-14T11:29:29+08:00</updated>
   <id>http://lvzongting.github.io/</id>
   <author>
     <name><![CDATA[Zongting Lv]]></name>
@@ -18,7 +18,7 @@
     <link href="http://lvzongting.github.io/blog/2014/04/13/chrome-os/"/>
     <updated>2014-04-13T15:14:57+08:00</updated>
     <id>http://lvzongting.github.io/blog/2014/04/13/chrome-os</id>
-    <content type="html"><![CDATA[<p>这个博客是由 octopress 和 slash 主题构成，稍微在源码上做了一些调整，相关修改在source分支中有详细记录。用google analysic 进行统计。</p>
+    <content type="html"><![CDATA[<p>这个博客是由 octopress 和 slash 主题构成，稍微在源码上做了一些调整，相关修改在source分支中有详细记录。用google analysis 进行统计。</p>
 
 <p>测试一下中文</p>
 
@@ -37,6 +37,11 @@
 
 <p><img src="http://24.media.tumblr.com/54fe87993a7756f43a985918099a3587/tumblr_n2g93bAS9a1rujq2eo1_1280.jpg"><br/>
 <a href="http://24.media.tumblr.com/54fe87993a7756f43a985918099a3587/tumblr_n2g93bAS9a1rujq2eo1_1280.jpg">http://24.media.tumblr.com/54fe87993a7756f43a985918099a3587/tumblr_n2g93bAS9a1rujq2eo1_1280.jpg</a></p>
+
+<p>dumpt</p>
+
+<p><img src="http://www.dumpt.com/img/links.php?file=wzxnpa2r0k17r7677ttm.jpg">
+<a href="http://www.dumpt.com/img/links.php?file=wzxnpa2r0k17r7677ttm.jpg">http://www.dumpt.com/img/links.php?file=wzxnpa2r0k17r7677ttm.jpg</a></p>
 ]]></content>
   </entry>
   
