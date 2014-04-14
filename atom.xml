@@ -4,7 +4,7 @@
   <title><![CDATA[Zongting Lv]]></title>
   <link href="http://lvzongting.github.io/atom.xml" rel="self"/>
   <link href="http://lvzongting.github.io/"/>
-  <updated>2014-04-15T01:41:22+08:00</updated>
+  <updated>2014-04-15T01:50:04+08:00</updated>
   <id>http://lvzongting.github.io/</id>
   <author>
     <name><![CDATA[Zongting Lv]]></name>
@@ -12,6 +12,166 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Play with Archlinux]]></title>
+    <link href="http://lvzongting.github.io/blog/2014/04/15/play-with-archlinux/"/>
+    <updated>2014-04-15T01:48:41+08:00</updated>
+    <id>http://lvzongting.github.io/blog/2014/04/15/play-with-archlinux</id>
+    <content type="html"><![CDATA[<p>小时候在书店看到《玩转windows XP》就会想为什么没有玩转Linux 后来有了《玩转Linux》发现写的还是不咋地，中文资料和英文资料相去甚远，一些人开始看中文后来水平高了，英文也看熟了，就懒得往回翻译了，所以，导致长期以来，中文资料少、散，大家入门的时候都会走一些弯路。</p>
+
+<p>我根据我听说的，和自己学习过程中走过的弯路重新整理一下，试图写一份欢快活泼的笔记。但是想想时间确实有限，根本写不出来，那些有时间写书的，写出来的质量确实太扯淡。这永远是个矛盾，鸟哥的私房菜很好，但是，随着时间的流逝里面的一些东西有些过时了，不知道那本书有没有兴趣再出个第二版之类的。</p>
+
+<p>希望以后有能人出现解决这个问题吧。能给中文圈中做出一手好的linux资料。并不只是翻译，而是按照中文大众的学习习惯写一些东西。</p>
+
+<p>我将要写的是一些很随意的笔记，大部分是根据记忆写的，当然我会根据留言提问，逐步的修改这些。希望能带给大家一些茶余饭后的值得谈论的有趣的话题。</p>
+
+<p>如何快速的无痛的获得archlinux</p>
+
+<p>语言之有限，诉说千遍，百闻不如一见，你先快速的无痛的获得一个archlinux 然后就有一个直观的印象了。</p>
+
+<p>无痛那么就需要有一个独立的U盘，所有的操作都在U盘上进行，与原来的硬盘没有什么关系，现在U盘很便宜，如果没有就买一个尽量便宜的U盘。如果你在有你个人数据的磁盘上做操作的时候需要小心，格外小心，不能犯错误。否则会造成不必要的损失。等你都玩熟了，再弄到本地磁盘上也不晚。</p>
+
+<p>快速就需要网络的支持，通过网络获取必要的文件，这样效率最高。你可以通过购买光盘或是其他方式获得这些文件，但是，通过网络获得会更加方便。而且现在好像网络比光盘更加普及。</p>
+
+<p>1、确定从哪里获得archlinux</p>
+
+<p>archlinux都是被大家整理好的，放在一些确定的文件服务器上，这些服务器叫做软件源，不用去混乱的论坛里面搜索，也不用去登陆那些充满广告的下载软件网站。这里有个固定的软件源列表，</p>
+
+<p>软件源列表地址是：https://www.archlinux.org/mirrorlist/all/</p>
+
+<p>在这里通过搜索(Ctrl+F)来找到china 然后 选一个你认识的地址，比如：</p>
+
+<p>163.com 网易   地址：http://mirrors.163.com/archlinux/</p>
+
+<p>ustc.edu.cn 中科大 地址：http://mirrors.ustc.edu.cn/archlinux/</p>
+
+<p>bjtu 北京交通大学 tsinghua.edu.cn 清华 等等吧我就不举例了。</p>
+
+<p>选好一个就行，然后用浏览器登陆进去看看，这就是archlinux的真身了，这就像一个巨大的网络磁盘，你可以自由的下载里面的所有内容。不需要付钱，没有广告，非常干净整齐直接有组织的将所有的东西都呈现在你面前。剩下的就是只要掌握了，把这些文件中的一些文件放到磁盘中一个合理的位置中，那么archlinux就能运行起来了。没有什么所谓的安装过程。够灵活吧。</p>
+
+<p>后文中就以中科大的软件源为例子进行命令的演示。各位可以根据自己的实际情况酌情替换。</p>
+
+<p>2、将四个的文件写入U盘</p>
+
+<p>对！只需要四个文件写入U盘合适的位置，就能马上得到一个archlinux。</p>
+
+<p>Step 1、把U盘格式化成FAT32格式</p>
+
+<p>Step 2、通过浏览器进入这个网址：http://mirrors.ustc.edu.cn/archlinux/iso/archboot/latest/boot/</p>
+
+<p>然后下载vmlinuz_i686 initramfs_i686.img两个文件到U盘上</p>
+
+<p>Step 3、通过浏览器获得Grub4DOS文件：下载 http://download.gna.org/grub4dos/grub4dos-0.4.4.zip</p>
+
+<p>然后用你熟知的解压工具从中解压出grldr.mbr grldr两个文件</p>
+
+<p>将grldr放到U盘上，然后将grldr.mbr放到一个临时的工作目录，比如/tmp</p>
+
+<p>这个文件比较特殊，他并不像平时的文件可以通过复制粘贴就放到U盘上就可以了，它需要放到特殊的位置的上，而普通的复制命令是做不到这一点的，所以我们需要一个更加高级的复制命令 dd 。</p>
+
+<p>执行下面两句话(假设你的U盘是/dev/sdb)(如果你的系统不是linux那么请参看FAQ 3 )</p>
+
+<p>dd if=/tmp/grldr.mbr of=/dev/sdb bs=440 count=1</p>
+
+<p>dd if=/tmp/grldr.mbr of=/dev/sdb skip=1 seek=1</p>
+
+<p>Step 4、在U盘上创建menu.lst文件</p>
+
+<p>文件内容如下：</p>
+
+<p>title Archlinux
+   find –set-root –ignore-floppies /vmlinuz_i686
+   kernel /vmlinuz_i686
+   initrd /initramfs_i686.img</p>
+
+<p>Step 5、检查一下，U盘中应该有四个文件，grldr vmlinuz_i686 initramfs_i686.img menu.lst</p>
+
+<p>3、通过U盘重新启动计算机</p>
+
+<p>当你看到Archlinux的时候记着要按一下回车确认进入系统。怎么样？随着屏幕的滚动你就得到了一个传说中的archlinux。</p>
+
+<p>下一节将带着大家在这个archlinux 中漫游一番，从而更加的了解自己的计算机。还有其它问题，在后面留言我会更新到FAQ中的。</p>
+
+<p>FAQ：</p>
+
+<p>1、Q：软件源地址中的mirrors是啥意思？</p>
+
+<p>A：是镜像的意思，其实软件源只有一个那就是archlinux的官方源，其他的源都是镜像克隆了这个官方源的内容的镜像源，所以叫做mirrors。与www万维网服务相对应，mirrors被称作镜像服务。由于世界上有数以千万计的人在同时使用archlinux，这些要安装系统升级系统，所以建设这些镜像源，目的就是为了分担官方源的流量压力，使得那些离着官方源比较远、下载速度比较慢的同学可以快速的得到软件源上的内容。</p>
+
+<p>2、Q：前文中说软件源中包含了所有我们需要的东西，那为什么Grub4DOS确实从另外一个地方下载的呢？</p>
+
+<p>A：额，这个…..好吧，原因比较复杂，</p>
+
+<p>a、archlinux的软件源中确实有Grub而且是最新的版本Grub2，这个版本Grub安装起来需要生成一个core.img的文件，生成过程比较复杂考虑到各位都是初学者，所以就没选Grub2。</p>
+
+<p>b、简单的生成core.img的方法也有，需要通过grub-mkimage 或是直接通过grub-install 去安装。有些操作系统没有这样的命令，写出来的教程适应性很差。很多看这篇文章的同学以前都在用不同的操作系统，有的是我听说过的，有的可能是我没有听说过的，所以不能保证每个系统上都有这些grub专用命令，比如ARM就不用GRUB作为bootloader，u-boot可能更广泛一些，但是，绝大部分操作系统都有dd命令，所以这样写出来的教程可操作性强。就是第一部分获得archlinux需要解决这个问题，从这以后所有讨论的东西都是基于archlinux的所以会更加方便一些。</p>
+
+<p>c、grub还有一个经典版本叫做grub-legacy 虽然这个版本已经被archlinux 移到AUR源中了，但是，我们还是可以通过其他发行版的软件源找到相应的包，大家可以参考FAQ 4 这里不用这个方法的原因是那个版本的脚本功能过于薄弱，不能写出一个很健壮的menu.lst会给大家第一次使用带来很多麻烦。而Grub4DOS是一个国人在原有grub-legacy基础上改进的兼容性非常强，而且可以支持非常丰富的menu.lst脚本</p>
+
+<p>d、grub4dos好像是最好的选择了，但是很遗憾，由于中文使用者在linux圈中还不怎么出名，而且贡献的比例不大，所以，这个版本的grub最终没有收录到软件源中，希望各位同学熟悉linux之后，有时间多为linux做贡献让中文用户在linux圈中获得更高的地位。</p>
+
+<p>e、除了grub2 archlinux源里面还有一个bootloader可选，syslinux这个和grub2的情况一样需要通过syslinux命令来生成ldlinux.sys</p>
+
+<p>所以权衡之下，就采取了上文中所述的方案。</p>
+
+<p>3、Q：如果我的计算机不是linux 而且没有dd命令怎么办？</p>
+
+<p>A：我这里举两个例子，Mac OSX苹果系统是有dd命令的，因为它是类unix系统，所有这样的系统基本上都有dd命令，只是磁盘的文件描述文件不一样，所以/dev/sdb 应该相应的改成 /dev/disk2 这个具体要看U盘挂到哪里。如果是windows系统，本身没有dd命令，需要安装这个工具，dd for windows 地址：www.chrysocome.net/dd‎ 上面有详细的说明，也是/dev/sdb 需要做出改变，比如U盘挂载到了F:盘那么就要改成&#46;\F: </p>
+
+<p>4、Q：如果希望使用grub-legacy而不是grub4dos怎么办？</p>
+
+<p>A：去debain的软件源下载， 地址：http://mirrors.ustc.edu.cn/debian/pool/main/g/grub/grub-legacy_0.97-67_i386.deb</p>
+
+<p>然后解压出data.tar.gz 在从中解压出/./usr/lib/i386-pc/stage1 和stage2 放到/tmp</p>
+
+<p>dd if=/tmp/stage1 of=/dev/sdb bs=1 count=446</p>
+
+<p>dd if=/tmp/stage2 of=/dev/sdb bs=512 seek=1</p>
+
+<p>然后这个不能写出一个很好的menu.lst 所以进入GRUB&gt;后手动输入命令</p>
+
+<p>GRUB&gt; find /vmlinuz_i686</p>
+
+<p>看输出结果  (hd0,0)</p>
+
+<p>GRUB&gt; kernel (hd0,0)/vmlinuz_i686</p>
+
+<p>GRUB&gt; initrd (hd0,0)/initramfs_i686.img</p>
+
+<p>GRUB&gt; boot</p>
+
+<p>这样就能进入系统了。</p>
+
+<p>5、Q：如果我在linux下，而且我的linux系统用的也是grub2应该怎么做呢？</p>
+
+<p>A：这是最简单的一种情况</p>
+
+<p>dd if=/boot/grub/boot.img of=/dev/sdb bs=446 count=1</p>
+
+<p>dd if=/boot/grub/core.img of=/dev/sdb bs=512 seek=1</p>
+
+<p>复制/boot/grub/ 到U盘上的/boot/grub，所有尤其是i386-pc 中的*.mod core.img 要加载这些文件。</p>
+
+<p>然后进入grub rescue&gt; ls</p>
+
+<p>grub rescue&gt; set root=(hd0,msdos1)</p>
+
+<p>grub rescue&gt; normal</p>
+
+<p>然后你就看到了熟悉的grub&gt; 会了吧。</p>
+
+<p>6、Q：其他教材上都说用虚拟机最好，为什么本文要用这种方式呢？</p>
+
+<p>A：在我办开源社区的时候，我发现很多人用虚拟机会出现很多问题，而这些问题本身不是linux或是archlinux的问题，都是虚拟机本身的毛病，这样浪费时间解决问题的同时，没有得到任何的有价值的东西。所以，脱离虚拟机，用真正的计算机这样遇到的问题，可能是linux的问题，可能是你计算机的问题。这样能大大增进你对自己的设备的了解程度。如果是计算机的问题，那么我们还可以进行改造。比如有人就认为键盘不好用，手指很累，这就是一个好的问题，我们就改造键盘变成了Dvorak布局，这样明显的减少了键程，这解决的都是实实在在的好问题。你会发现linux给你带来了无限的可能。这也就是linux的真正魅力所在。</p>
+
+<p>另外，这样学完之后大家会感受到linux的灵活，不需要下载几百M上甚至是上G的文件，然后经过漫长的dd到U盘的过程，然后在经过无比漫长从U盘再安装回硬盘的过程，这里浪费的时间太多了，后面的章节中会讲到如何用这个U盘系统通过网络直接安装archlinux系统，这样你用多少就下载多少，没有必要下载过多的没有必要的部分。大大的提高了部署的速度和效率。</p>
+
+<p>你学到的是最灵活的，最本质的部署linux的方法，当以后大家遇到的情况更是五花八门，这样灵活的方法，总有一天会在关键的时候救你一命的。</p>
+
+<p>还有，其实这个U盘系统就是一个救援系统，当计算机再出其他问题的时候，不会束手无策，而是可以退回这个U盘系统，你最熟悉的系统上来，把你硬盘上的系统修好。从此丢掉这么一个坏毛病，就是计算机某些小程序，或是小的部件出了问题，还必须重新安装一遍整个系统。当你上手之后就会发现，你几乎再不会重装系统了。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Chrome OS 笔记]]></title>
