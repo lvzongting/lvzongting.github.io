@@ -4,7 +4,7 @@
   <title><![CDATA[Zongting Lv]]></title>
   <link href="http://lvzongting.github.io/atom.xml" rel="self"/>
   <link href="http://lvzongting.github.io/"/>
-  <updated>2014-04-15T08:50:58+08:00</updated>
+  <updated>2014-04-15T17:47:04+08:00</updated>
   <id>http://lvzongting.github.io/</id>
   <author>
     <name><![CDATA[Zongting Lv]]></name>
@@ -206,7 +206,7 @@
 
 <p>http://sourceforge.net/projects/chromiumos/</p>
 
-<p>找一个你能登陆上的网站去下载最新的chromium OS，如果你登陆不上去不等于这个网站不存在，你懂的。比如我在http://chromium.arnoldthebat.co.uk/index.php 这里的daily目录下下载了Cx86OS-20140314010101.img.7z 大概250+M，然后将其解压，用7z 挤压完之后你会得到一个2.5G 大小的img文件，将这个文件dd到你的U盘上。然后再用U盘把你的计算机引导起来就进入chromium OS了。</p>
+<p>找一个你能登陆上的网站去下载最新的chromium OS，如果你登陆不上去不等于这个网站不存在，你懂的。比如我在第二个地址下的daily目录下下载了Cx86OS-20140314010101.img.7z大概250+M，然后将其解压，用7z 挤压完之后你会得到一个2.5G大小的img文件，将这个文件dd到你的U盘上。然后再用U盘把你的计算机引导起来就进入chromium OS了。</p>
 
 <p>将上面的步骤重新总结一下以便于观看：</p>
 
