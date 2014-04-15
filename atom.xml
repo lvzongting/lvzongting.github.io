@@ -4,7 +4,7 @@
   <title><![CDATA[Zongting Lv]]></title>
   <link href="http://lvzongting.github.io/atom.xml" rel="self"/>
   <link href="http://lvzongting.github.io/"/>
-  <updated>2014-04-15T17:47:04+08:00</updated>
+  <updated>2014-04-15T18:14:52+08:00</updated>
   <id>http://lvzongting.github.io/</id>
   <author>
     <name><![CDATA[Zongting Lv]]></name>
@@ -206,7 +206,7 @@
 
 <p>http://sourceforge.net/projects/chromiumos/</p>
 
-<p>找一个你能登陆上的网站去下载最新的chromium OS，如果你登陆不上去不等于这个网站不存在，你懂的。比如我在第二个地址下的daily目录下下载了Cx86OS-20140314010101.img.7z大概250+M，然后将其解压，用7z 挤压完之后你会得到一个2.5G大小的img文件，将这个文件dd到你的U盘上。然后再用U盘把你的计算机引导起来就进入chromium OS了。</p>
+<p>找一个你能登陆上的网站去下载最新的镜像文件，如果你登陆不上去不等于这个网站不存在，你懂的。比如我在第二个地址下的daily目录下下载一个适合自己计算机结构的镜像版本大概250+M，然后将其解压，用7z挤压完之后你会得到一个2.5G大小的img文件，将这个文件dd到你的U盘上。然后再用U盘把你的计算机引导起来就进入chromium OS了。</p>
 
 <p>将上面的步骤重新总结一下以便于观看：</p>
 
@@ -228,7 +228,7 @@
 
 <p>4、通过U盘引导你的计算机</p>
 
-<p>进入系统之后，需要你点击几下continue ，配置一下无线设置，然后输入gmail的账户，就能进入chromium 系统了。进入系统之后它会自动的同步你的chrome配置下载插件，更新系统。</p>
+<p>进入系统之后，需要你点击几下continue，配置一下无线设置，然后输入gmail的账户，就能进入chromium系统了。进入系统之后它会自动的同步你的chrome配置下载插件，更新系统。</p>
 
 <p><img src="http://i.minus.com/ixWR3o24yW7z8.jpg" /></p>
 
@@ -302,7 +302,7 @@
 
 <p>所以，本地化工作还有许多要做的，而在chrome web store上发布插件又那么容易。这里应该有许多工作可以以百度网盘为基础，开展更加方便的，更加有创意的一些项目。在线协作写程序？绘画？分享报表？分享大作业？</p>
 
-<p>以后猎豹浏览器就直接升级成了猎豹OS。基于chrome OS。O(∩_∩)O</p>
+<p>以后猎豹浏览器就直接升级成了猎豹OS。基于chrome OS。</p>
 
 <h3 id="section-3">3、在线工作和离线工作已经很模糊了</h3>
 
@@ -342,7 +342,7 @@
 
 <h3 id="section-7">1、局域网无盘系统</h3>
 
-<p>PXE+chromium OS 整个系统才2.5G放到nfs上 而基于gentoo非常好PXE，这样整个局域网内的计算机不需要安装本地系统，只要把PXE服务器弄好，然后其他的计算机一开机就从网络系统进入，然后用自己的gmail账户登陆系统使用，非常方便实用，免去了安装系统和维护系统的精力，特别适用于网吧，或是小型企业，大家不会再将办公时间浪费在修计算机上，也不需要雇佣太多的计算机维护人员，基本上这个系统无需维护，只要把PXE服务器维护好就可以了。</p>
+<p>PXE + chromium OS 整个系统才2.5G放到nfs上 而基于gentoo非常好PXE，这样整个局域网内的计算机不需要安装本地系统，只要把PXE服务器弄好，然后其他的计算机一开机就从网络系统进入，然后用自己的gmail账户登陆系统使用，非常方便实用，免去了安装系统和维护系统的精力，特别适用于网吧，或是小型企业，大家不会再将办公时间浪费在修计算机上，也不需要雇佣太多的计算机维护人员，基本上这个系统无需维护，只要把PXE服务器维护好就可以了。</p>
 
 <p>员工也不会将精力再投入到如何安装某个软件或是配置打印机上，google的云打印绝对是节省时间的利器。</p>
 
@@ -352,7 +352,7 @@
 
 <h3 id="section-9">3、学校机房</h3>
 
-<p>根据上面提到PXE+chromium OS的方案，学校机房需要什么软件的时候只需要在PXE服务器上弄好就可以了，没有必要再去对每一台计算机进行单独的配置，即使使用局域网广播GHOST也是非常劳神费力的一件事情。而chromium OS有同样的效率，却不需要精心的进行什么配置，就像自己用的chrome浏览器一样，一台弄好了，所有的就自动都弄好了。</p>
+<p>根据上面提到PXE + chromium OS 的方案，学校机房需要什么软件的时候只需要在PXE服务器上弄好就可以了，没有必要再去对每一台计算机进行单独的配置，即使使用局域网广播GHOST也是非常劳神费力的一件事情。而chromium OS有同样的效率，却不需要精心的进行什么配置，就像自己用的chrome浏览器一样，一台弄好了，所有的就自动都弄好了。</p>
 
 <h3 id="section-10">4、数据管理系统</h3>
 
@@ -360,11 +360,11 @@
 
 <h2 id="section-11">总结：</h2>
 
-<p>chromium OS安装非常方便，可以临时在U盘上安装试用一下，如果觉得好完全可以安装在本地硬盘上，或者干脆就将存储数据的硬盘和存储系统的硬盘分开，用一个4G的读写速度快的flash装系统，然后和本地存数据的硬盘分开，这样，如果系统出问题了，就用原来下载的那个包重新刷一下，然后登陆一下系统然后什么就都回来了。无需更多的操作。</p>
+<p>chromium OS 安装非常方便，可以临时在U盘上安装试用一下，如果觉得好完全可以安装在本地硬盘上，或者干脆就将存储数据的硬盘和存储系统的硬盘分开，用一个4G的读写速度快的flash装系统，然后和本地存数据的硬盘分开，这样，如果系统出问题了，就用原来下载的那个包重新刷一下，然后登陆一下系统然后什么就都回来了。无需更多的操作。</p>
 
 <p>这样在刷系统的时候也很安全，系统和数据在物理上都是隔离的。</p>
 
-<p>也许以后就进入到这么一个时代，买一个带chrome OS的U盘或是高速SD卡，然后插到计算机上，开机登陆进入自己的gmail账户，然后就可以使用了。完全没有所谓的安装或是复制的过程。太方便了。</p>
+<p>也许以后就进入到这么一个时代，买一个带chrome OS 的U盘或是高速SD卡，然后插到计算机上，开机登陆进入自己的gmail账户，然后就可以使用了。完全没有所谓的安装或是复制的过程。太方便了。</p>
 
 <p>先写这么多吧，今天就想到这么多了。如果还有什么新的或是各位还有什么问题，在后面回复，然后我有时间可以再接着写。</p>
 
@@ -381,7 +381,9 @@
 <img src="http://i.minus.com/i0QAqtsYVnOmU.jpg" />
 <img src="http://i.minus.com/i0S55lBizvSBF.jpg" /></p>
 
-<p>如果觉得还不爽可以用linuxbrew ，如果觉得还不爽可以打开开发者模式用gentoo的emerge，如果觉得还不爽可以直接上archlinux 地址:https://wiki.archlinux.org/index.php/Acer_C720_Chromebook</p>
+<p>如果觉得还不爽可以用linuxbrew, 如果觉得还不爽可以打开开发者模式用gentoo的emerge，如果觉得还不爽可以直接上archlinux。</p>
+
+<p>archwiki 地址: https://wiki.archlinux.org/index.php/Acer_C720_Chromebook</p>
 
 <p>还有一个更加强大的工具crouton，一个chrome OS中的chroot环境，可以方便快捷的安装debian和ubuntu(@张维垚visual 提供的信息)，怕我的表达能力有限，说不清楚，于是在一个不存在的video网站上下载了一个视频已经传到优酷上了，包括两部分：</p>
 
@@ -552,23 +554,9 @@
 
 <p><strong><span style="line-height: 1.5;color: rgb(0,128,0);">直接运行：</span></strong></p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>curl -L http://mno.pw/r/1</td>
-      <td>bash &gt; log.txt或者：</td>
-    </tr>
-  </tbody>
-</table>
+<p># curl -L http://mno.pw/r/1 | bash &gt; log.txt 或者： </p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>curl -L http://mno.pw/r/2</td>
-      <td>bash &gt; log.txt</td>
-    </tr>
-  </tbody>
-</table>
+<p># curl -L http://mno.pw/r/2 | bash &gt; log.txt</p>
 
 <p>具体可以参考这两个文档：</p>
 
