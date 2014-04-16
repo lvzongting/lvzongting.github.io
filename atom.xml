@@ -4,7 +4,7 @@
   <title><![CDATA[Zongting Lv]]></title>
   <link href="http://lvzongting.github.io/atom.xml" rel="self"/>
   <link href="http://lvzongting.github.io/"/>
-  <updated>2014-04-15T18:14:52+08:00</updated>
+  <updated>2014-04-16T10:30:04+08:00</updated>
   <id>http://lvzongting.github.io/</id>
   <author>
     <name><![CDATA[Zongting Lv]]></name>
@@ -642,6 +642,15 @@ curl -F ‘name=@screenshot.png’ http://img.vim-cn.com/</p>
 <p><img src="http://img.vim-cn.com/f2/bd76daf93871abf44c034dc131be5f3645fe1f.jpeg" />
 http://img.vim-cn.com/f2/bd76daf93871abf44c034dc131be5f3645fe1f.jpeg</p>
 
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[About]]></title>
+    <link href="http://lvzongting.github.io/blog/2014/04/12/about/"/>
+    <updated>2014-04-12T10:28:04+08:00</updated>
+    <id>http://lvzongting.github.io/blog/2014/04/12/about</id>
+    <content type="html"><![CDATA[
 ]]></content>
   </entry>
   

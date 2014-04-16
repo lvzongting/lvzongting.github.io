@@ -1,6 +1,10 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
+        <loc>http://lvzongting.github.io/blog/2014/04/12/about/</loc>
+        <lastmod>2014-04-16T10:29:48+08:00</lastmod>
+    </url>
+    <url>
         <loc>http://lvzongting.github.io/blog/2014/04/13/test/</loc>
         <lastmod>2014-04-14T14:08:54+08:00</lastmod>
     </url>
@@ -14,7 +18,7 @@
     </url>
     <url>
         <loc>http://lvzongting.github.io/</loc>
-        <lastmod>2014-04-15T18:14:37+08:00</lastmod>
+        <lastmod>2014-04-16T10:29:48+08:00</lastmod>
     </url>
     <url>
         <loc>http://lvzongting.github.io/robots.txt</loc>
@@ -22,6 +26,6 @@
     </url>
     <url>
         <loc>http://lvzongting.github.io/blog/archives/</loc>
-        <lastmod>2014-04-15T18:14:37+08:00</lastmod>
+        <lastmod>2014-04-16T10:29:48+08:00</lastmod>
     </url>
 </urlset>
