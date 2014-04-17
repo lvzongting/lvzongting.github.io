@@ -117,8 +117,7 @@ $ rake install['slash']
 
 * 在source/_post/ 这个目录中找到你刚才创建的那个markdown文件，用你最喜欢的编辑器开始展现你的文采吧
 
-  如果不会markdown语法，可以看看这篇文章 kramdown 的 Quick Reference 
-
+  如果不会markdown语法，可以看看这篇文章 kramdown 的 Quick Reference  
 地址：http://kramdown.gettalong.org/quickref.html  如果有些语法不能被正确的解释，那么需要修改 _config.yml 中的markdown: rdiscount 变为markdown: kramdown 就可以了
 
 * 不要在第一页放太多的内容
@@ -201,7 +200,7 @@ sass/parts/_post.scss: margin-left: 200px;
 
 然后我把这两行注释掉了，/\*margin-left: 200px;\*/  生成网页，预览，好了一切安宁了。
 
-还有就是markdown不能改变字体颜色，这个时候当然要清楚大杀器，嵌入html代码了。
+还有就是markdown不能改变字体颜色，这个时候当然要请出大杀器，嵌入html代码了。
 
 于是就 This is \<span style="color: red"\>written in red\</span\>. 这样就可以了。
 
