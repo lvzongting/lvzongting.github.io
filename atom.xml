@@ -4,7 +4,7 @@
   <title><![CDATA[Zongting Lv]]></title>
   <link href="http://lvzongting.github.io/atom.xml" rel="self"/>
   <link href="http://lvzongting.github.io/"/>
-  <updated>2014-04-17T16:29:07+08:00</updated>
+  <updated>2014-04-17T16:32:23+08:00</updated>
   <id>http://lvzongting.github.io/</id>
   <author>
     <name><![CDATA[Zongting Lv]]></name>
@@ -775,13 +775,9 @@ $ rake install[‘slash’]   </p>
   <li>
     <p>在source/_post/ 这个目录中找到你刚才创建的那个markdown文件，用你最喜欢的编辑器开始展现你的文采吧</p>
 
-    <p>如果不会markdown语法，可以看看这篇文章 kramdown 的 Quick Reference </p>
+    <p>如果不会markdown语法，可以看看这篇文章 kramdown 的 Quick Reference<br />
+地址：http://kramdown.gettalong.org/quickref.html  如果有些语法不能被正确的解释，那么需要修改 _config.yml 中的markdown: rdiscount 变为markdown: kramdown 就可以了</p>
   </li>
-</ul>
-
-<p>地址：http://kramdown.gettalong.org/quickref.html  如果有些语法不能被正确的解释，那么需要修改 _config.yml 中的markdown: rdiscount 变为markdown: kramdown 就可以了</p>
-
-<ul>
   <li>
     <p>不要在第一页放太多的内容</p>
 
