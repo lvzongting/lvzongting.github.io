@@ -109,7 +109,7 @@
 
 <p>好了现在访问一下你的网站lvzongting.github.io，biu，出现了。怎么样？建一个最简单的属于自己的博客已经完成了。如果精通html或是网页制作的同学后面就不要看了，你现在已经知道怎么做了。你做的会比我好很多。</p>
 
-<p>photo-media</p>
+<p><img src="http://i.minus.com/i0nB5AbQ4dlX.png" /></p>
 
 <h3 id="po">跟po主一样手很残，做不好网页怎么办？</h3>
 
@@ -146,13 +146,15 @@ $ rbenv exec rake install  </p>
 
 <h3 id="section-2">这个还不错，但是还不是很理想，如何进一步的完善呢？</h3>
 
-<p>当然这个只是个默认主题，可以搜索octopress theme来找找自己喜欢的主题，比如我找到了slash这个主题，主题地址：http://zespia.tw/Octopress-Theme-Slash/</p>
+<p>当然这个只是个默认主题，可以搜索octopress theme来找找自己喜欢的主题，比如我找到了slash这个主题，</p>
+
+<p>主题地址：http://zespia.tw/Octopress-Theme-Slash/</p>
 
 <p>按照上面给出的安装过程，命令如下：</p>
 
-<p>$ cd octopress 
-$ git clone git://github.com/tommy351/Octopress-Theme-Slash.git .themes/slash 
-$ rake install[‘slash’] </p>
+<p>$ cd octopress <br />
+$ git clone git://github.com/tommy351/Octopress-Theme-Slash.git .themes/slash<br />
+$ rake install[‘slash’]   </p>
 
 <p>然后生成网页，预览一下。</p>
 
@@ -162,59 +164,62 @@ $ rake install[‘slash’] </p>
 
 <p>把这个网站部署到github上看看效果呗 </p>
 
-<p>step 1 将_config.yml中url 一项填上自己的github地址。</p>
+<ul>
+  <li>
+    <p>将_config.yml中url 一项填上自己的github地址。</p>
 
-<blockquote>
-  <p>url: http://lvzongting.github.io</p>
-</blockquote>
+    <p>url: http://lvzongting.github.io</p>
+  </li>
+  <li>
+    <p>生成github部署文件</p>
 
-<p>step 2 生成github部署文件</p>
+    <p>$ rake setup_github_pages</p>
+  </li>
+  <li>
+    <p>部署之前再生成一遍网页</p>
 
-<blockquote>
-  <p>$ rake setup_github_pages</p>
-</blockquote>
+    <p>$ rake generate</p>
+  </li>
+  <li>
+    <p>部署到github上</p>
 
-<p>step 3 部署之前再生成一遍网页</p>
-
-<blockquote>
-  <p>$ rake generate</p>
-</blockquote>
-
-<p>step 4 部署到github上</p>
-
-<blockquote>
-  <p>$ rake deploy</p>
-</blockquote>
+    <p>$ rake deploy</p>
+  </li>
+</ul>
 
 <p>等部署完，这个时候，就能访问你的博客，lvzongting.github.io 来看结果了，如果没有结果，先去看看那个项目文件和更新没，如果更新正常，而访问不了网页那是暂时的，过一会儿就行了。如果还不行，那么清除你浏览器的cache试试。</p>
 
 <h3 id="section-3">博客都准备好了，就差博文了</h3>
 
-<p>step 1、创建一篇新的博客</p>
+<ul>
+  <li>
+    <p>创建一篇新的博客</p>
 
-<blockquote>
-  <p>rake new_post[“My 1st Post”]</p>
-</blockquote>
+    <p>$ rake new_post[“My 1st Post”]</p>
+  </li>
+  <li>
+    <p>在source/_post/ 这个目录中找到你刚才创建的那个markdown文件，用你最喜欢的编辑器开始展现你的文采吧</p>
 
-<p>step 2、在source/_post/ 这个目录中找到你刚才创建的那个markdown文件，用你最喜欢的编辑器开始展现你的文采吧</p>
+    <p>如果不会markdown语法，可以看看这篇文章 kramdown 的 Quick Reference </p>
+  </li>
+</ul>
 
-<blockquote>
-  <p>如果不会markdown语法，可以看看这篇文章 kramdown 的 Quick Reference 地址：http://kramdown.gettalong.org/quickref.html  如果有些语法不能被正确的解释，那么需要修改 _config.yml 中的markdown: rdiscount 变为markdown: kramdown 就可以了</p>
-</blockquote>
+<p>地址：http://kramdown.gettalong.org/quickref.html  如果有些语法不能被正确的解释，那么需要修改 _config.yml 中的markdown: rdiscount 变为markdown: kramdown 就可以了</p>
 
-<p>step 3、不要在第一页放太多的内容</p>
+<ul>
+  <li>
+    <p>不要在第一页放太多的内容</p>
 
-<blockquote>
-  <p>在一个合适的位置上加入 <!--more--> 这样你的首页不会显得特…..别长。</p>
-</blockquote>
+    <p>在一个合适的位置上加入 <!--more--> 这样你的首页不会显得特…..别长。</p>
+  </li>
+  <li>
+    <p>生成网页，预览，部署到github上</p>
 
-<p>step 4、生成网页，预览，部署到github上</p>
-
-<blockquote>
-  <p>$ rake generate
-$ rake preview
-$ rake deploy </p>
-</blockquote>
+    <p>$ rake generate<br />
+$ rake preview<br />
+$ rake deploy  </p>
+  </li>
+</ul>
 
 <p>如果不想看，就直接部署上去，不一定非要预览。</p>
 
@@ -222,11 +227,11 @@ $ rake deploy </p>
 
 <p>可以将所有的源码上传到lvzonting.github.io这个项目的另外一个分支，网页只读取master分支上的index.html</p>
 
-<p>$ pwd 
-octopress
-$ git add .
-$ git commit -am “backup the whole source”
-$ git push origin source</p>
+<p>$ pwd <br />
+octopress<br />
+$ git add .<br />
+$ git commit -am “backup the whole source”<br />
+$ git push origin source  </p>
 
 <p>这样当你换一台计算机的时候，就先将source分支上的内容clone下来然，后接着写博客了。 </p>
 
@@ -234,29 +239,29 @@ $ git push origin source</p>
 
 <p>建议不要把图片push到github上去，因为那里只有300M空间，您的超清大图一张，就把github塞满了。所以找个能放图片而且能给固定连接的地方，然后在你的博客中引用这个地址，这样，一般人感觉不出来，这个图片并不在你的github上。</p>
 
-<p>找了几个放图片的地方，很多人也把这些地方叫做图床。比如minus.com flikr.com tumblr.com 还有很多人推荐的七牛。我有一个网页，地址：http://lvzongting.github.io/blog/2014/04/13/test/ 可以用来测试这些图床的加载速度，找一个在你那里加载速度的快的当图床吧。</p>
+<p>找了几个放图片的地方，很多人也把这些地方叫做图床。比如minus.com flikr.com tumblr.com 还有很多人推荐的七牛。我有一个网页，</p>
 
-<p>step 1、把图片传上去</p>
+<p>地址：http://lvzongting.github.io/blog/2014/04/13/test/ 可以用来测试这些图床的加载速度，找一个在你那里加载速度的快的当图床吧。</p>
 
-<blockquote>
-  <p>有些需要注册，有些不需要注册，花一点点儿时间把你选定的那个相册玩熟，然后把你博客中需要的图片传上去。</p>
-</blockquote>
+<ul>
+  <li>
+    <p>把图片传上去</p>
 
-<p>step 2、得到固定连接</p>
+    <p>有些需要注册，有些不需要注册，花一点点儿时间把你选定的那个相册玩熟，然后把你博客中需要的图片传上去。</p>
+  </li>
+  <li>
+    <p>得到固定连接</p>
 
-<blockquote>
-  <p>找到直接连接 固定连接 direct link这些字样后面的连接，然后放到浏览器里面看看能不能直接看到图片。</p>
-</blockquote>
+    <p>找到直接连接 固定连接 direct link这些字样后面的连接，然后放到浏览器里面看看能不能直接看到图片。</p>
+  </li>
+  <li>
+    <p>加入到你的markdown文件中</p>
 
-<p>step 3、加入到你的markdown文件中</p>
+    <p>加入这样句子就能直接引用你的照片了。比如照片地址是：http://i4.minus.com/i6GkonP3Qs2dr.jpg</p>
 
-<blockquote>
-  <p>加入这样句子就能直接引用你的照片了。比如照片地址是：http://i4.minus.com/i6GkonP3Qs2dr.jpg</p>
-</blockquote>
-
-<blockquote>
-  <p><img src="http://i4.minus.com/i6GkonP3Qs2dr.jpg" /></p>
-</blockquote>
+    <p>{ % img http://i4.minus.com/i6GkonP3Qs2dr.jpg % }</p>
+  </li>
+</ul>
 
 <p>好了，图片插入完了，生成网页，预览一下吧。</p>
 
@@ -266,20 +271,20 @@ $ git push origin source</p>
 
 <p>执行结果就是一个固定图片地址，会用了吧。vim神器！</p>
 
-<p>还有依稀地方不尽如人意，还行再改改。</p>
+<h3 id="section-5">还有依稀地方不尽如人意，还行再改改。</h3>
 
 <p>我把左面那个meta信息栏去掉了，我是这么干的</p>
 
 <p>通过浏览器调试我发现那个信息栏关键字是&lt;div class=&#8221;meta&#8221;&gt;，于是我就…</p>
 
-<p>$ grep -R &#8220;meta&#8221; * </p>
+<p>$ grep -R \“meta\” * </p>
 
 <p>返回结果，除了生成的网页以外，有两个文件</p>
 
-<p>source/_includes/archive_post.html: &lt;div class=&#8221;meta&#8221;&gt;
-source/_includes/article.html:&lt;div class=&#8221;meta&#8221;&gt; </p>
+<p>source/_includes/archive_post.html: &lt;div class=&#8221;meta&#8221;&gt;<br />
+source/_includes/article.html: &lt;div class=&#8221;meta&#8221;&gt; </p>
 
-<p>进到这个两个文件把两个div块注释掉 <!--div class="meta"> </div--></p>
+<p>进到这个两个文件把两个div块注释掉 &lt;!–div class=”meta”&gt; &lt;/div–&gt;</p>
 
 <p>然后生成网页，预览，发现确实管用，但是，预留的地方还有，通过浏览器调试发现是css中margin-left: 200px这句话的作用。于是我又…….</p>
 
@@ -287,18 +292,16 @@ source/_includes/article.html:&lt;div class=&#8221;meta&#8221;&gt; </p>
 
 <p>返回结果</p>
 
-<p>sass/parts/_archive.scss: margin-left: 200px;
+<p>sass/parts/_archive.scss: margin-left: 200px;<br />
 sass/parts/_post.scss: margin-left: 200px;</p>
 
-<p>然后我把这两行注释掉了，/<em>margin-left: 200px;</em>/  生成网页，预览，好了一切安宁了。</p>
+<p>然后我把这两行注释掉了，/*margin-left: 200px;*/  生成网页，预览，好了一切安宁了。</p>
 
 <p>还有就是markdown不能改变字体颜色，这个时候当然要清楚大杀器，嵌入html代码了。</p>
 
-<p>于是就 This is <span style="color: red">written in red</span>. 这样就可以了。</p>
+<p>于是就 This is &lt;span style=”color: red”&gt;written in red&lt;/span&gt;. 这样就可以了。</p>
 
-<p>最后给个博客的截图吧，如果想看真的，就访问lvzongting.github.io</p>
-
-<p>photo-media</p>
+<p>最后，各位可以回到首页去想看看效果吧，请访问http://lvzongting.github.io</p>
 
 <p>暂时就这么多。随着我博客的建立，随时会更新这篇文章。或是各位在使用的时候有什么想法，也可以留言。我也会更新到日志当中的。</p>
 </div>
