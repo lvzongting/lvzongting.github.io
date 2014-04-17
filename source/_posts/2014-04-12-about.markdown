@@ -1,0 +1,214 @@
+---
+layout: post
+title: "About"
+date: 2014-04-12 10:28:04 +0800
+comments: true
+categories: 
+---
+
+
+<!--more-->
+
+## 本博客的构建方法
+
+由于各种原因，我需要一个自己的博客了。
+
+在过去由于时间等因素，虽然早就有打算开自己的博客，但是一直迟迟未动手。这次算是实现了。以我的风格，这篇日志的风格当然是讲我怎么建设我的博客的啦。
+
+### 放在哪？
+
+对于建设博客，我首先考虑的是安全问题，我没有太多的时间去管理我的博客，所以我要找一个比较现成的地方，而不是从头建起。好吧，简单的说就是我比较偷懒。所以我选择github。这是为数不多的我能记住密码的地方。
+
+我将我的博客放到了github 的pages 上，这个服务还不错，比较符合我的风格，简单，直接。
+
+* 创建一个项目叫做: lvzongting.github.io
+
+  其中lvzongting 要和你github上ID一致，如果不一致，我也不知道会怎样，你可以试试。
+
+* 然后进入项目创建一个index.html 的文件，上面随便写点儿什么
+
+  我就是生成了带README文件的项目，然后编辑了一下，这个readme然后将其更名成index.html的。所以说，一个简单的单网页不需要很麻烦，直接手写index.html就可以了。
+
+* 等上10分钟
+
+  这是最困难的部分了，你知道10分钟可以做很多事情，比如烤一份猪肉卷，把欧弟从桌子上踢下去好几次。你应该试着做点儿别的什么来分散一下注意力，10分钟很快就过去了。比如看一期linux action show什么的。
+
+好了现在访问一下你的网站lvzongting.github.io，biu，出现了。怎么样？建一个最简单的属于自己的博客已经完成了。如果精通html或是网页制作的同学后面就不要看了，你现在已经知道怎么做了。你做的会比我好很多。
+
+{% img http://i.minus.com/i0nB5AbQ4dlX.png %}
+
+### 跟po主一样手很残，做不好网页怎么办？
+
+没关系，可以通过程序生成一个漂亮的网页。比如Jekyll，octopress，hexo等等，这些就像是编译器，将用markdown语言写的日志编译成网页。可以换主题，加各种插件，等等。最大的好处是生成的都是静态网页。
+
+我选择了octopress，因为上面有个特别喜欢的slash主题，所以就选用了这个。
+
+在archlinux 下安装的过程如下：直接上命令了，如果看不懂就复制进去执行就行了，如果有心情可以去看看这些命令啥意思
+
+\# pacman -S git  
+\# yaourt -S rbenv ruby-build  
+re-login  
+$ git clone git://github.com/imathis/octopress.git octopress  
+$ cd octopress  
+$ echo "1.9.3-p545" > .rbenv-version  
+$ rbenv install $(cat .rbenv-version)   
+$ rbenv rehash  
+$ rbenv exec gem install bundler  
+$ rbenv rehash  
+$ rbenv exec bundle install  
+$ rbenv exec rake install  
+
+
+至于那个神奇的数字1.9.3-p545 你可以通过 $ rbenv install --list 来列出所有可选的版本号，然后选一个比1.9.3更先进的就行了。
+
+然后生成网页
+
+$ rake generate
+
+预览一下效果，
+
+$ rake preview
+
+这样就能通过自己的浏览器进行预览，预览地址：http://127.0.0.1:4000/
+
+### 这个还不错，但是还不是很理想，如何进一步的完善呢？
+
+当然这个只是个默认主题，可以搜索octopress theme来找找自己喜欢的主题，比如我找到了slash这个主题，
+
+主题地址：http://zespia.tw/Octopress-Theme-Slash/
+
+按照上面给出的安装过程，命令如下：
+
+$ cd octopress   
+$ git clone git://github.com/tommy351/Octopress-Theme-Slash.git .themes/slash  
+$ rake install['slash']   
+
+然后生成网页，预览一下。
+
+然后就是，去 _config.yml 这个文件填个表，把自己知道的信息，想在网页中出现的信息，就填进去。没有就不填。然后重新生成一下网页，预览一下。怎么样？是不是已经有些雏形了？
+
+还有把那个source/favicon.png 替换成32x32的png图片，会有惊喜的。当然记得更新完要重新生成网页油。
+
+把这个网站部署到github上看看效果呗 
+
+* 将_config.yml中url 一项填上自己的github地址。
+
+   url: http://lvzongting.github.io
+
+* 生成github部署文件
+
+  $ rake setup_github_pages
+
+* 部署之前再生成一遍网页
+
+  $ rake generate
+
+* 部署到github上
+
+  $ rake deploy
+
+等部署完，这个时候，就能访问你的博客，lvzongting.github.io 来看结果了，如果没有结果，先去看看那个项目文件和更新没，如果更新正常，而访问不了网页那是暂时的，过一会儿就行了。如果还不行，那么清除你浏览器的cache试试。
+
+### 博客都准备好了，就差博文了 
+
+* 创建一篇新的博客
+
+  $ rake new_post["My 1st Post"]
+
+* 在source/_post/ 这个目录中找到你刚才创建的那个markdown文件，用你最喜欢的编辑器开始展现你的文采吧
+
+  如果不会markdown语法，可以看看这篇文章 kramdown 的 Quick Reference 
+
+地址：http://kramdown.gettalong.org/quickref.html  如果有些语法不能被正确的解释，那么需要修改 _config.yml 中的markdown: rdiscount 变为markdown: kramdown 就可以了
+
+* 不要在第一页放太多的内容
+
+  在一个合适的位置上加入 <!--more--> 这样你的首页不会显得特.....别长。
+
+* 生成网页，预览，部署到github上
+
+  $ rake generate  
+  $ rake preview  
+  $ rake deploy  
+
+如果不想看，就直接部署上去，不一定非要预览。
+
+### 都弄好了，如果换一台计算机怎么继续编写？
+
+可以将所有的源码上传到lvzonting.github.io这个项目的另外一个分支，网页只读取master分支上的index.html
+
+$ pwd   
+octopress  
+$ git add .  
+$ git commit -am "backup the whole source"  
+$ git push origin source  
+
+这样当你换一台计算机的时候，就先将source分支上的内容clone下来然，后接着写博客了。 
+
+写作的过程中想插入图片
+
+建议不要把图片push到github上去，因为那里只有300M空间，您的超清大图一张，就把github塞满了。所以找个能放图片而且能给固定连接的地方，然后在你的博客中引用这个地址，这样，一般人感觉不出来，这个图片并不在你的github上。
+
+找了几个放图片的地方，很多人也把这些地方叫做图床。比如minus.com flikr.com tumblr.com 还有很多人推荐的七牛。我有一个网页，
+
+地址：http://lvzongting.github.io/blog/2014/04/13/test/ 可以用来测试这些图床的加载速度，找一个在你那里加载速度的快的当图床吧。
+
+* 把图片传上去
+
+  有些需要注册，有些不需要注册，花一点点儿时间把你选定的那个相册玩熟，然后把你博客中需要的图片传上去。
+
+* 得到固定连接
+
+  找到直接连接 固定连接 direct link这些字样后面的连接，然后放到浏览器里面看看能不能直接看到图片。
+
+* 加入到你的markdown文件中
+
+  加入这样句子就能直接引用你的照片了。比如照片地址是：http://i4.minus.com/i6GkonP3Qs2dr.jpg
+
+  \{ % img http://i4.minus.com/i6GkonP3Qs2dr.jpg % \}
+
+好了，图片插入完了，生成网页，预览一下吧。
+
+如果你没有浏览器，有时候就是会很蹩手，那么推荐一个方法，
+
+curl -F 'name=@/path/to/image' http://img.vim-cn.com/
+
+执行结果就是一个固定图片地址，会用了吧。vim神器！
+
+### 还有依稀地方不尽如人意，还行再改改。
+
+我把左面那个meta信息栏去掉了，我是这么干的
+
+通过浏览器调试我发现那个信息栏关键字是<div class="meta">，于是我就...
+
+$ grep -R \\"meta\\" * 
+
+返回结果，除了生成的网页以外，有两个文件
+
+source/_includes/archive_post.html: <div class="meta">  
+source/_includes/article.html: <div class="meta"> 
+
+进到这个两个文件把两个div块注释掉 \<!--div class="meta"\> \</div--\>
+
+然后生成网页，预览，发现确实管用，但是，预留的地方还有，通过浏览器调试发现是css中margin-left: 200px这句话的作用。于是我又.......
+
+$ grep -R margin-left:\ 200px * 
+
+返回结果
+
+sass/parts/_archive.scss: margin-left: 200px;  
+sass/parts/_post.scss: margin-left: 200px;
+
+然后我把这两行注释掉了，/\*margin-left: 200px;\*/  生成网页，预览，好了一切安宁了。
+
+还有就是markdown不能改变字体颜色，这个时候当然要清楚大杀器，嵌入html代码了。
+
+于是就 This is \<span style="color: red"\>written in red\</span\>. 这样就可以了。
+
+
+
+最后，各位可以回到首页去想看看效果吧，请访问http://lvzongting.github.io
+
+
+
+暂时就这么多。随着我博客的建立，随时会更新这篇文章。或是各位在使用的时候有什么想法，也可以留言。我也会更新到日志当中的。
